@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Notes";
+    var loggedInUser = (Data.Model.User)TempData["Apr"];
+	TempData["Apr"] = loggedInUser;
+}
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/Content/html/notes_sheet.css">
+</head>
+<body>
+
+    <div id="navbar">
+
+        <a class="active" href="Home">
+            <img class="image" src="~/Content/Images/logo1.png" width=70px height=18%>
+        </a>
+
+        <a href="UserProfile"> @loggedInUser.Username</a>
+        <div class="dropdown">
+            <button class="dropbtn">
+                Идеи
+                <i class="fa fa-caret-down"> </i>
+            </button>
+            <div class="dropdown-content">
+                <a href="cooking"> Готварство </a>
+                <a href="music"> Музика </a>
+                <a href="kino"> Кино </a>
+
+            </div>
+        </div>
+        <a href="/apr/signout" style="float: right;"> Изход </a>
+    </div>
+    <title>Бележки</title>
+    <div id="myDIV" class="header">
+        <h2 style="margin:5px">Моят лист със задачи</h2>
+        <input type="text" id="myInput" placeholder="Запиши...">
+        <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
+
+    <ul id="myUL">
+        <li>Отиди на фитнес</li>
+        <li class="checked">Плати сметките</li>
+        <li>Срещни се с Георги</li>
+        <li>Купи яйца</li>
+        <li>Чети книга</li>
+    </ul>
+
+    <script src="~/Content/html/notes_script.js"></script>
+
+
+
+</body>
+</html>

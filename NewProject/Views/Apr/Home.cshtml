@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Home";
+    var loggedInUser = (Data.Model.User)TempData["Apr"];
+    TempData["Apr"] = loggedInUser;
+}
+
+
+    <head>
+        <link rel="stylesheet" href="~/Content/html/Index_style.css">
+        <link rel="Javascript" href="~/Content/html/Index_script.js" />
+        <title> Начална страница </title>
+    </head>
+<body>
+
+    <div id="navbar">
+
+        <a class="active"  href="/apr/Home">
+            <img class="image" src="~/Content/Images/logo1.png" width=70px height=18%>
+        </a>
+
+        <a href="/apr/UserProfile"> @loggedInUser.Username</a>
+        <div class="dropdown">
+            <button class="dropbtn">
+                Идеи
+                <i class="fa fa-caret-down"> </i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/apr/cooking"> Готварство </a>
+                <a href="/apr/music"> Музика </a>
+                <a href="/apr/kino"> Кино </a>
+
+            </div>
+        </div>
+        <a href="/apr/signout" style="float: right;"> Изход </a>
+    </div>
+    <a href="notes">
+        <img src="~/Content/Images/categoryy1.jpg" class="category1"> </img>
+    </a>
+
+    <div class="box">
+        <h1>За нас: </h1>
+        <h2> jhashhjsjhshjsj</h2>
+        <h2> jhashhjsjhshjsj</h2>
+        <h2> jhashhjsjhshjsj</h2>
+        <h2> jhashhjsjhshjsj</h2>
+    </div>
+
+    <script src="Index_script.js"></script>
+
+</body>

@@ -1,0 +1,296 @@
+﻿@{
+    ViewBag.Title = "Music";
+}
+
+<head>
+    <link rel="stylesheet" href="~/Content/html/music_sheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Музика </title>
+</head>
+<body>
+
+    <div id="navbar">
+        <a class="active" href="Home">
+            <img class="image" src="~/Content/Images/logo1.png" width=70px height=18%>
+        </a>
+
+        <a href="/User/Register"> Вход/Регистрация</a>
+        <div class="dropdown">
+            <button class="dropbtn">
+                Идеи
+                <i class="fa fa-caret-down"> </i>
+            </button>
+            <div class="dropdown-content">
+                <a href="cooking"> Готварство </a>
+                <a href="music"> Музика </a>
+                <a href="kino"> Кино </a>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <h1> Тук можете да рагледате най-слушаните песни </h1>
+    <h1> през последните години </h1>
+    <h5> <a href="#C1">Натисни тук за 2018</a> </h5>
+    <h5> <a href="#C2">Натисни тук за 2017</a> </h5>
+
+    <h6>Топ5 за 2019година:</h6>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'road')" id="defaultOpen">Old Town Road</button>
+        <button class="tablinks" onclick="openCity(event, 'bad')"> bad guy</button>
+        <button class="tablinks" onclick="openCity(event, 'Sucker')">Sucker</button>
+        <button class="tablinks" onclick="openCity(event, 'Rings')"> 7 Rings</button>
+        <button class="tablinks" onclick="openCity(event, 'Señorita')">Señorita</button>
+
+
+    </div>
+
+
+    <div id="road" class="tabcontent">
+        <h3>Old Town Road</h3>
+        <img class="music" src="~/Content/Images/2019(1).jpg"> </img>
+        <h2> Изпълнител: Лил Нас X </h2>
+        <h2> Представен изпълнител: Били Рей Сайръс </h2>
+        <h2> Албум: Old Town Road (Remix) </h2>
+        <h2> Година на издаване: 2019 г. </h2>
+        <h2> Жанрове: Country rap, Поп музика</h2>
+        <h2> Награди: „Грами“ за най-добро изпълнение на поп дует/група </h2>
+        <form>
+            <textarea>Добавете текст...</textarea>
+        </form>
+    </div>
+
+
+
+    <div id="bad" class="tabcontent">
+        <h3>bad guy</h3>
+        <img class="music" src="~/Content/Images/2019(2).jpg"> </img>
+        <h2>Изпълнителка: Били Айлиш </h2>
+        <h2> Албум: When We All Fall Asleep, Where Do We Go?</h2>
+        <h2> Година на издаване: 2019 г. </h2>
+        <h2>Жанр: Алтърнатив/инди </h2>
+        <h2> Награди: „Грами“ за песен на годината </h2>
+        <h2> Номинации: „Грами“ за най-добро солово поп изпълнение</h2>
+        <form>
+            <textarea>Добавете текст...</textarea>
+        </form>
+    </div>
+
+    <div id="Sucker" class="tabcontent">
+        <h3>Sucker</h3>
+        <img class="music" src="~/Content/Images/2019(3).jpg"> </img>
+        <h2>Изпълнител: Джонас Брадърс</h2>
+        <h2> Албум: Happiness Begins</h2>
+        <h2> Година на издаване: 2019 г. </h2>
+        <h2>Жанр: Поп музика </h2>
+        <h2> Награди: Награда за музикален клип на Ем Ти Ви за най-добър поп клип </h2>
+        <h2> Номинации: Награда за музикален клип на Ем Ти Ви за клип на годината </h2>
+        <form>
+            <textarea>Добавете текст...</textarea>
+        </form>
+    </div>
+
+    <div id="Rings" class="tabcontent">
+        <h3> 7 Rings</h3>
+        <img class="music" src="~/Content/Images/2019(4).png"> </img>
+        <h2>Изпълнителка: Ариана Гранде</h2>
+        <h2> Албум: 7 rings (Remix)</h2>
+        <h2> Година на издаване: 2019 г. </h2>
+        <h2> Жанр: Поп музика </h2>
+        <h2> Награди: Награда за музикален клип на Ем Ти Ви за най-добра художествена режисура </h2>
+        <h2> Номинации: „Грами“ за най-добро солово поп изпълнение </h2>
+        <form>
+            <textarea>Добавете текст...</textarea>
+        </form>
+    </div>
+
+    <div id="Señorita" class="tabcontent">
+        <h3>Señorita</h3>
+        <img class="music" src="~/Content/Images/2019(5).jpg"> </img>
+        <h2> Изпълнители: Камила Кабело, Шон Мендес </h2>
+        <h2> Албум: Señorita </h2>
+        <h2>Година на издаване: 2019 г. </h2>
+        <h2> Жанр: Поп музика </h2>
+        <h2> Награди: Награда за музикален клип на Ем Ти Ви за най-добро сътрудничество </h2>
+        <h2> Номинации: Музикална награда на Ем Ти Ви Европа за най-добра песен </h2>
+        <form>
+            <textarea>Добавете текст...</textarea>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+	var likes = 1;
+	function like(){
+		document.getElementById("show").innerHTML = "Likes: " + likes;
+		likes = 1;
+	}
+    </script>
+
+
+    <h6>Топ5 най-слушаните песни за</h6>
+    <h6 id="C1"> </h6>
+    <h6>2018г.</h6>
+
+    <div class="tab1">
+        <button class="tablinks1" onclick="openCity1(event, 'godsplan')" id="defaultOpen1">God's Plan</button>
+        <button class="tablinks1" onclick="openCity1(event, 'ilikeit')"> I Like It</button>
+        <button class="tablinks1" onclick="openCity1(event, 'notears')">No Tears Left to Cry</button>
+        <button class="tablinks1" onclick="openCity1(event, 'havana')">Havana</button>
+        <button class="tablinks1" onclick="openCity1(event, 'friends')">FRIENDS</button>
+    </div>
+
+    <div id="godsplan" class="tabcontent1">
+
+        <h3>God's Plan</h3>
+        <img class="music" src="~/Content/Images/2018(1).jpg"> </img>
+        <h2> Изпълнител: Дрейк </h2>
+        <h2> Година на издаване: 2018 г. </h2>
+        <h2> Жанрове: Поп музика, Трап, Поп-рап </h2>
+        <h2> Награди: „Грами“ за най-добра рап песен </h2>
+        <h2> Номинации: „Грами“ за песен на годината </h2>
+        <form>
+            <textarea>Добавете текст...</textarea>
+        </form>
+    </div>
+
+    <div id="ilikeit" class="tabcontent1">
+        <h3>I Like It</h3>
+        <img class="music" src="~/Content/Images/2018(2).jpg"> </img>
+        <h2> Изпълнителка: Ариана Гранде </h2>
+        <h2> Година на издаване: 2018 г. </h2>
+        <h2> Жанр: Поп музика </h2>
+        <h2> Награди: Награда за музикален клип на Ем Ти Ви за най-добър поп клип </h2>
+        <h2> Номинации: Награда за музикален клип на Ем Ти Ви за клип на годината </h2>
+        <form>
+            <textarea>Добавете текст...</textarea>
+        </form>
+    </div>
+
+    <div id="notears" class="tabcontent1">
+        <h3>No Tears Left to Cry</h3>
+        <img class="music" src="~/Content/Images/2018(3).png"> </img>
+        <h2>Изпълнител: Джонас Брадърс</h2>
+        <h2> Албум: Happiness Begins</h2>
+        <h2> Година на издаване: 2019 г. </h2>
+        <h2>Жанр: Поп музика </h2>
+        <h2> Награди: Награда за музикален клип на Ем Ти Ви за най-добър поп клип </h2>
+        <h2> Номинации: Награда за музикален клип на Ем Ти Ви за клип на годината </h2>
+        <form>
+            <textarea>Добавете текст...</textarea>
+        </form>
+    </div>
+
+    <div id="havana" class="tabcontent1">
+        <h3> Havana </h3>
+        <img class="music" src="~/Content/Images/2018(4).jpg"> </img>
+        <h2> Изпълнителка: Камила Кабело </h2>
+        <h2> Представени изпълнители: Young Thug, Йънг Тъг </h2>
+        <h2> Албум: Camila </h2>
+        <h2> Година на издаване: 2018 г. </h2>
+        <h2> Жанрове: Латино-поп, Поп музика </h2>
+        <form>
+            <textarea>Добавете текст...</textarea>
+        </form>
+    </div>
+
+    <div id="friends" class="tabcontent1">
+        <h3>FRIENDS</h3>
+        <img class="music" src="~/Content/Images/2018(5).jpg"> </img>
+        <h2> Изпълнители: Маршмело, Ан-Мари </h2>
+        <h2> Албум: FRIENDS </h2>
+        <h2> Година на издаване: 2018 г. </h2>
+        <h2> Жанр: Поп музика </h2>
+        <h2> Номинации: MuchMusic Video Award for Song of the Summer </h2>
+        <form>
+            <textarea>Добавете текст...</textarea>
+        </form>
+    </div>
+
+    <h6>Топ5 най-слушаните песни за</h6>
+    <h6 id="C2"> </h6>
+    <h6>2017г.</h6>
+
+    <div class="tab2">
+        <button class="tablinks2" onclick="openCity2(event, 'shapeofyou')" id="defaultOpen2">Shape of You</button>
+        <button class="tablinks2" onclick="openCity2(event, 'newrules')"> New Rules </button>
+        <button class="tablinks2" onclick="openCity2(event, 'Despacito')">Despacito</button>
+        <button class="tablinks2" onclick="openCity2(event, 'signoftimes')">Sign of the Times</button>
+        <button class="tablinks2" onclick="openCity2(event, 'Humble')">Humble</button>
+    </div>
+
+    <div id="shapeofyou" class="tabcontent2">
+        <h3>Shape of You</h3>
+        <img class="music" src="~/Content/Images/2017(1).jpg"> </img>
+        <h2> Изпълнител: Ед Шийрън </h2>
+        <h2> Албум: Shape of You (Stormzy Remix) </h2>
+        <h2> Година на издаване: 2017 г. </h2>
+        <h2>
+            Автори на песента: Ед Шийрън; Стив Мак; Джони Мкдайд; Кенди Бъръс;
+            Тамека Котл; Kevin "She'kspere" Briggs
+        </h2>
+        <h2> Продуцент: : Ed Sheeran; Стив Мак </h2>
+        <form>
+            <textarea>Добавете текст...</textarea>
+        </form>
+    </div>
+
+    <div id="newrules" class="tabcontent2">
+        <h3>New Rules</h3>
+        <img class="music" src="~/Content/Images/2017(2).jpg"> </img>
+        <h2> Изпълнителка: Дуа Липа </h2>
+        <h2> Албум: Dua Lipa </h2>
+        <h2> Година на издаване: 2017 г. </h2>
+        <h2> Жанр: Поп музика </h2>
+        <h2> Номинации: Награда „Брит“ за най-добър британски сингъл </h2>
+        <form>
+            <textarea>Добавете текст...</textarea>
+        </form>
+    </div>
+
+    <div id="Despacito" class="tabcontent2">
+        <h3> Despacito </h3>
+        <img class="music" src="~/Content/Images/2017(3).jpg"> </img>
+        <h2> Изпълнител: Луис Фонси </h2>
+        <h2> Представен изпълнител: Деди Янки </h2>
+        <h2> Албум: Vida </h2>
+        <h2> Година на издаване: 2017 г. </h2>
+        <h2> Жанрове: Регетон, Латино-поп </h2>
+        <form>
+            <textarea>Добавете текст...</textarea>
+        </form>
+    </div>
+
+    <div id="signoftimes" class="tabcontent2">
+        <h3> Sign of the Times </h3>
+        <img class="music" src="~/Content/Images/2017(4).jpg"> </img>
+        <h2> Изпълнител: Хари Стайлс </h2>
+        <h2> Албум: Sign of the Times </h2>
+        <h2> Година на издаване: 2017 г. </h2>
+        <h2> Жанр: Бритпоп </h2>
+        <h2> Номинации: Награда за музикален клип на Ем Ти Ви за най-добър поп клип </h2>
+        <form>
+            <textarea>Добавете текст...</textarea>
+        </form>
+    </div>
+
+    <div id="Humble" class="tabcontent2">
+        <h3>Humble</h3>
+        <img class="music" src="~/Content/Images/2017(5).jpg"> </img>
+        <h2> Изпълнител: Кендрик Ламар </h2>
+        <h2> Албум: HUMBLE. (SKRILLEX REMIX) </h2>
+        <h2> Година на издаване: 2017 г. </h2>
+        <h2> Награди: „Грами“ за най-добра рап песен </h2>
+        <h2> Номинации: „Грами“ за запис на годината </h2>
+        <form>
+            <textarea>Добавете текст...</textarea>
+        </form>
+    </div>
+
+    <script src="~/Content/html/music_script.js"></script>
+
+</body>

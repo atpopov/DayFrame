@@ -1,0 +1,80 @@
+﻿@{
+    Layout = null;
+    var loggedInUser = (Data.Model.User)TempData["Apr"];
+    TempData["Apr"] = loggedInUser;
+    string name;
+    if (loggedInUser.Name != null)
+    {
+        name = loggedInUser.Name; 
+    } 
+    else 
+    {
+        name = "Име"; 
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/Content/html/profile_sheet.css">
+    <link rel="jssheet" href="~/Content/html/registration_script.js">
+    <title></title>
+</head>
+<body>
+    <div id="navbar">
+
+        <a class="active" href="Home">
+            <img class="image" src="~/Content/Images/logo1.png" width=70px height=18%>
+        </a>
+
+        <a href="UserProfile"> @loggedInUser.Username</a>
+        <div class="dropdown">
+            <button class="dropbtn">
+                Идеи
+                <i class="fa fa-caret-down"> </i>
+            </button>
+            <div class="dropdown-content">
+                <a href="cooking"> Готварство </a>
+                <a href="music"> Музика </a>
+                <a href="kino"> Кино </a>
+
+            </div>
+        </div>
+        <a href="/apr/signout" style="float: right;"> Изход </a>
+    </div>
+
+
+    <form action="/action_page.php">
+        <div class="container">
+            <h1>Профил </h1>
+
+            <div class="card">
+                <img id="myImage" src="~/Content/Images/profile1.jpg" alt="Avatar" style="width:100%">
+                <div class="container1">
+                    <h4><b>Име</b></h4>
+                </div>
+            </div>
+
+            <label for="email"><b>@name</b></label>
+            <input type="text" placeholder="Въведи име" name="name" required>
+
+
+            <form action="">
+                <input type="radio" name="gender" value="male"
+                       onclick="document.getElementById('myImage').src='~/Content/Images/male.jpg'"> Мъж<br>
+
+                <input type="radio" name="gender" value="female"
+                       onclick="document.getElementById('myImage').src='~/Content/Images/female.jpg'"> Жена<br>
+                <input type="radio" name="gender" value="other"
+                       onclick="document.getElementById('myImage').src='~/Content/Images/profile1.jpg'"> Друго
+            </form>
+
+            <button h type="submit" class="registerbtn">Запази</button>
+        </div>
+
+    </form>
+
+    <script href="~/Content/html/registration_script.js"></script>
+</body>
+</html>

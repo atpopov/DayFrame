@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="registration_sheet.css">
+    <link rel="jssheet" type="text/Javascript" href="registration_script.js">
+    <title> Регистрация </title>
+</head>
+<body>
+
+    <div id="navbar">
+
+        <a class="active" href="Index_.html">
+            <img class="image" src="logo1.png" width=70px height=18%>
+        </a>
+
+        <a href="registration.html"> Регистрация</a>
+        <div class="dropdown">
+            <button class="dropbtn">
+                Идеи
+                <i class="fa fa-caret-down"> </i>
+            </button>
+            <div class="dropdown-content">
+                <a href="cooking.html"> Готварство </a>
+                <a href="music.html"> Музика </a>
+                <a href="kino.html"> Кино </a>
+
+            </div>
+        </div>
+    </div>
+    <form action="/action_page.php">
+        <div class="container">
+            <h1>Регистрация </h1>
+            <p>Попълнете формите, за да създадете своя акаунт</p>
+            <hr>
+
+            <label for="email"><b>Имейл</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Парола</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <label for="psw-repeat"><b>Повторете паролата</b></label>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            <hr>
+            <p>Със създаването на своя акаунт вие се съгласявате <a href="#">Terms & Privacy</a>.</p>
+
+            <button type="submit" class="registerbtn">Регистрирай се</button>
+        </div>
+
+        <div class="container signin">
+            <p>Вече имаш създаден акаунт? <a href="#">Вход</a>.</p>
+        </div>
+    </form>
+    <script src="registration_script.js"></script>
+
+</body>
+</html> 
