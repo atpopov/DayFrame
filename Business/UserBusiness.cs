@@ -1,4 +1,5 @@
 ﻿using Data;
+using Data.Data;
 using Data.Model;
 using System;
 using System.Collections.Generic;
@@ -19,43 +20,7 @@ namespace Business
                 return context.Users.ToList();
             }
         }
-
-        public void Register(User user)
-        {
-            var AllUsers = GetAll();
-            bool successfulRegister = true;
-
-            foreach(var currentUser in AllUsers)
-            {
-                if(currentUser.Username == user.Username)
-                {
-                    successfulRegister = false;
-                }
-            }
-
-            if(successfulRegister == true)
-            {
-                using(context = new UserContext())
-                {
-                    context.Users.Add(user);
-                    context.SaveChanges();
-                }
-            }
-        }
-
-        public void Login(User user)
-        {
-            var AllUsers = GetAll();
-            bool successfulLogin = false;
-
-            foreach (var currentUser in AllUsers)
-            {
-                if ((currentUser.Username == user.Username) && (currentUser.Password == user.Password))
-                {
-                    successfulLogin = true; 
-                }
-            }
-
-        }
     }
 }
+
+        

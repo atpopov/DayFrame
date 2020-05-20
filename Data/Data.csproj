@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\NotesContext.cs" />
     <Compile Include="Data\UserContext.cs" />
     <Compile Include="Migrations\202005011218383_InitialCreate.cs" />
     <Compile Include="Migrations\202005011218383_InitialCreate.designer.cs">
@@ -60,7 +61,20 @@
     <Compile Include="Migrations\202005182141004_AddNameAndGender.designer.cs">
       <DependentUpon>202005182141004_AddNameAndGender.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005201238081_InitialCreate1.cs" />
+    <Compile Include="Migrations\202005201238081_InitialCreate1.designer.cs">
+      <DependentUpon>202005201238081_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005201428024_AddNotesUsers1.cs" />
+    <Compile Include="Migrations\202005201428024_AddNotesUsers1.designer.cs">
+      <DependentUpon>202005201428024_AddNotesUsers1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005201441144_AddNotesUsers2.cs" />
+    <Compile Include="Migrations\202005201441144_AddNotesUsers2.designer.cs">
+      <DependentUpon>202005201441144_AddNotesUsers2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Notes.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -74,6 +88,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005182141004_AddNameAndGender.resx">
       <DependentUpon>202005182141004_AddNameAndGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005201238081_InitialCreate1.resx">
+      <DependentUpon>202005201238081_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005201428024_AddNotesUsers1.resx">
+      <DependentUpon>202005201428024_AddNotesUsers1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005201441144_AddNotesUsers2.resx">
+      <DependentUpon>202005201441144_AddNotesUsers2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

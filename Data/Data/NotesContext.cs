@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Data.Data
 {
-    public class UserContext : DbContext
+    public class NotesContext : DbContext
     {
-        public UserContext()
-            : base("name=UserContext")
+        public NotesContext()
+           : base("name=NotesContext")
         {
 
         }
-        public DbSet<User> Users { get; set; }
+        public DbSet<Notes> Notes { get; set; }
     }
 }
