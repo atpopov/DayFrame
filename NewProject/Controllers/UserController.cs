@@ -40,7 +40,6 @@ namespace NewProject.Controllers
 
 
 
-
         [HttpGet]
         public ActionResult Login(int id = 0)
         {
@@ -57,8 +56,10 @@ namespace NewProject.Controllers
                 if(context.Users.Any(x => x.Username==userModel.Username && x.Password==userModel.Password))
                 {
                     //successfulLogin = true;
+                    var ddd = context.Users.Where(x => x.Username == userModel.Username && x.Password == userModel.Password);
                     loggedInUser = userModel;
-                    TempData["Apr"] = loggedInUser;
+                    TempData["Apr"] = ddd.First();
+                    TempData["Controller"] = ddd.First();
                     ViewBag.SuccessLoginMessage = "Успешен вход!";
                     return View("~/Views/Apr/Home.cshtml");
                 }

@@ -45,6 +45,9 @@ list.addEventListener('click', function (ev) {
 function newElement() {
     var li = document.createElement("li");
     var inputValue = document.getElementById("myInput").value;
+
+    
+
     var t = document.createTextNode(inputValue);
     li.appendChild(t);
     if (inputValue === '') {
@@ -54,6 +57,8 @@ function newElement() {
     }
     document.getElementById("myInput").value = "";
 
+    
+    
     var span = document.createElement("SPAN");
     var txt = document.createTextNode("\u00D7");
     span.className = "close";
@@ -66,4 +71,16 @@ function newElement() {
             div.style.display = "none";
         }
     }
+   
+    var serviceURL = 'Apr/SaveNote';
+
+    $.ajax({
+        type: "POST",
+        url: serviceURL,
+        data: { note: inputValue },
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+    });
+
+    
 }

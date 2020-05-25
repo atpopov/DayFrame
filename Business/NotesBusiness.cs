@@ -1,5 +1,6 @@
 ﻿using Data.Data;
 using Data.Model;
+using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Business
 {
-    class NotesBusiness
+    public class NotesBusiness
     {
         private NotesContext context;
         public List<Notes> GetAll()
@@ -18,5 +19,20 @@ namespace Business
                 return context.Notes.ToList();
             }
         }
+
+        [JSInvokable]
+        public static void SaveNote(string note)
+        {
+            Notes newNote = new Notes();
+            newNote.Note = note;
+            newNote.UserId = 1;
+            using (NotesContext context = new NotesContext())
+            {
+                context.Notes.Add(newNote);
+                context.SaveChanges();
+            }
+
+        }
+
     }
 }
