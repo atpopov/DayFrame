@@ -19,49 +19,6 @@ namespace NewProject.Controllers
 
             return View();
         }
-        [HttpGet]
-        public ActionResult Notes()
-        {
-            User loggedIn = (User)TempData["Controller"];
-            TempData["Controller"] = loggedIn;
-            UserId = loggedIn.Id;
-            
-            return View();
-        }
-        [HttpPost]
-        
-        public ActionResult Notes(Notes note)
-        {
-            User loggedIn = (User)TempData["Controller"];
-            TempData["Controller"] = loggedIn;
-            UserId = loggedIn.Id;
-            note.UserId = loggedIn.Id;
-            using (NotesContext context = new NotesContext())
-            {
-                context.Notes.Add(note);
-                context.SaveChanges();
-            }
-            return View("~/Views/Apr/Notes.cshtml");
-        }
-        [HttpGet]
-        public ActionResult SaveNote()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult SaveNote(string note)
-        {
-            Notes newNote = new Notes();
-            newNote.Note = note;
-            newNote.UserId = UserId;
-            using(NotesContext context = new NotesContext())
-            {
-                context.Notes.Add(newNote);
-                context.SaveChanges();
-            }
-            return Json(note,JsonRequestBehavior.AllowGet);
-        }
-
         public ActionResult Cooking()
         {
             
@@ -90,7 +47,7 @@ namespace NewProject.Controllers
         }
 
         [HttpGet]
-        public ActionResult NewNotes(int id=0)
+        public ActionResult Notes(int id=0)
         {
             User loggedIn = (User)TempData["Controller"];
             TempData["Controller"] = loggedIn;
@@ -99,7 +56,7 @@ namespace NewProject.Controllers
             return View(notesModel);
         }
         [HttpPost]
-        public ActionResult NewNotes(Notes notesModel)
+        public ActionResult Notes(Notes notesModel)
         {
             User loggedIn = (User)TempData["Controller"];
             TempData["Controller"] = loggedIn;
@@ -109,7 +66,28 @@ namespace NewProject.Controllers
                 context.Notes.Add(notesModel);
                 context.SaveChanges();
             }
-            return View("NewNotes",new Notes());
+            return View("Notes",new Notes());
+        }
+
+        [HttpGet]
+        public ActionResult DeleteNote(int id)
+        {
+            using(NotesContext context = new NotesContext())
+            {
+                return View(context.Notes.Where(x => x.Id == id).FirstOrDefault());
+            }
+        }
+
+        [HttpPost]
+        public ActionResult DeleteNote(int id, string a)
+        {
+            using(NotesContext context = new NotesContext())
+            {
+                Notes note = context.Notes.Where(x => x.Id == id).FirstOrDefault();
+                context.Notes.Remove(note);
+                context.SaveChanges();
+            }
+            return RedirectToAction("Notes");
         }
     }
 }

@@ -1,0 +1,49 @@
+﻿@model Data.Model.Notes
+
+@{
+    ViewBag.Title = "DeleteNote";
+    var loggedInUser = (Data.Model.User)TempData["Apr"];
+    TempData["Apr"] = loggedInUser;
+}
+    <link rel="stylesheet" href="~/Content/html/delete_sheet.css">
+
+<title>Изтриване на бележка</title>
+ <div id="navbar">
+    <a class="active" href="Home">
+        <img class="image" src="~/Content/Images/logo1.png" width=70px height=18%>
+    </a>
+
+    <a href="/Apr/UserProfile"> @loggedInUser.Username</a>
+    <div class="dropdown">
+        <button class="dropbtn">
+            Идеи
+            <i class="fa fa-caret-down"> </i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/apr/cooking"> Готварство </a>
+            <a href="/apr/music"> Музика </a>
+            <a href="/apr/kino"> Кино </a>
+
+        </div>
+    </div>
+    <a href="/apr/signout" style="float: right;"> Изход </a>
+ </div>
+    <h3>Сигурни ли сте, че искате да изтриете бележката?</h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal" id="deletednote">
+            <dd>
+                @Html.DisplayFor(model => model.Note)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color" id="deletebtn">
+                <input type="submit" value="Изтрий" class="btn btn-default" /> 
+            </div>
+        }
+    </div>

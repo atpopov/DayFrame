@@ -1,8 +1,6 @@
-﻿@model Data.Model.Notes
-
-@{
-    ViewBag.Title = "View";
-     var loggedInUser = (Data.Model.User)TempData["Apr"];
+﻿@{
+    ViewBag.Title = "Notes";
+    var loggedInUser = (Data.Model.User)TempData["Apr"];
     TempData["Apr"] = loggedInUser;
 
 
@@ -18,8 +16,8 @@
             // TempData["UserNotes"] = UserNotes;
         }
     }
-}
 
+}
 
 <html>
 <head>
@@ -33,7 +31,7 @@
             <img class="image" src="~/Content/Images/logo1.png" width=70px height=18%>
         </a>
 
-        <a href="UserProfile">@loggedInUser.Username</a>
+        <a href="UserProfile"> @loggedInUser.Username</a>
         <div class="dropdown">
             <button class="dropbtn">
                 Идеи
@@ -48,42 +46,23 @@
         </div>
         <a href="/apr/signout" style="float: right;"> Изход </a>
     </div>
-    @using (Html.BeginForm("NewNotes", "Apr", FormMethod.Post))
-    {
-        @Html.AntiForgeryToken()
-
-<div class="form-vertical">
-    <h4>Бележки</h4>
-    <h4>Моят лист със задачи</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.Note, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Note, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Note, "", new { @class = "text-danger" })
-        </div>
+    <title>Бележки</title>
+    <div id="myDIV" class="header">
+        <h2 style="margin:5px">Моят лист със задачи</h2>
+        <input type="text" id="myInput" placeholder="Запиши...">
+        <span onclick="newElement()" class="addBtn">Add</span>
     </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Запази" class="btn btn-default" />
-        </div>
-    </div>
-</div>
-    }
-</body>
-<div>
-    <ul id="myUL1"> 
+    <ul id="myUL">
         @foreach (var note in UserNotes)
         {
-
-            <li><>@note.Note</li>
+            <li>@note.Note</li>
         }
 
     </ul>
-</div>
 
     <script src="~/Content/html/notes_script.js"></script>
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }
+
+
+
+</body>
+</html>
