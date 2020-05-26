@@ -10,26 +10,23 @@ namespace NewProject.Controllers
     public class HomeController : Controller
     {
         User loggedInUser = new User();
+
+        //Method that displays the index Page
         public ActionResult Index()
         {
             return View();
         }
 
+        //Method that displays the HomePage
         public ActionResult Home(User currentUser)
         {
            
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your application home page.";
             loggedInUser = currentUser;
             return View();
         }
 
-        public ActionResult Register()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
+        //Method that displays the Cooking Page
         public ActionResult Cooking()
         {
             ViewBag.Message = "Cooking Page.";
@@ -37,6 +34,7 @@ namespace NewProject.Controllers
             return View();
         }
 
+        //Method that displays the Movie Page
         public ActionResult Kino()
         {
             ViewBag.Message = "Kino Page.";
@@ -44,16 +42,10 @@ namespace NewProject.Controllers
             return View();
         }
 
+        //Method that displays the Music Page
         public ActionResult Music()
         {
             ViewBag.Message = "Music Page.";
-
-            return View();
-        }
-
-        public ActionResult Notes()
-        {
-            ViewBag.Message = "Notes";
 
             return View();
         }

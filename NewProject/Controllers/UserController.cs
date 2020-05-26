@@ -11,8 +11,12 @@ namespace NewProject.Controllers
 {
     public class UserController : Controller
     {
+        //Object that contains the current User
         User loggedInUser = new User();
         // GET: User
+
+
+        //The GET Method for the Register Page
         [HttpGet]
         public ActionResult Register(int id=0)
         {
@@ -20,9 +24,12 @@ namespace NewProject.Controllers
             return View(userModel);
         }
 
+
+        //The POST Method for the Register Page
         [HttpPost]
         public ActionResult Register (User userModel)
         {
+            //Connecting and accessing the data in Database for the Registration process
             using(UserContext context = new UserContext())
             {
                 if(context.Users.Any(x=>x.Username ==userModel.Username))
@@ -39,7 +46,7 @@ namespace NewProject.Controllers
         }
 
 
-
+        //The GET Method for the Login Page
         [HttpGet]
         public ActionResult Login(int id = 0)
         {
@@ -47,10 +54,12 @@ namespace NewProject.Controllers
             return View(userModel);
         }
 
+
+        //The POST Method for the Login Page
         [HttpPost]
         public ActionResult Login(User userModel)
         {
-           // bool successfulLogin = false;
+            //Connecting and accessing the data in Database for the Login process
             using (UserContext context = new UserContext())
             {
                 if(context.Users.Any(x => x.Username==userModel.Username && x.Password==userModel.Password))
@@ -58,6 +67,8 @@ namespace NewProject.Controllers
                     //successfulLogin = true;
                     var ddd = context.Users.Where(x => x.Username == userModel.Username && x.Password == userModel.Password);
                     loggedInUser = userModel;
+
+                    //Methods for storing the data for the logged in User, so we can use it in the other Controllers
                     TempData["Apr"] = ddd.First();
                     TempData["Controller"] = ddd.First();
                     ViewBag.SuccessLoginMessage = "Успешен вход!";

@@ -13,6 +13,8 @@ namespace Business
     {
         private UserContext context;
 
+
+        //Makes a List with the users from the Database
         public List<User> GetAll()
         {
             using (context = new UserContext())

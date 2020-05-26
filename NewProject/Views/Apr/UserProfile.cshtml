@@ -1,15 +1,26 @@
-﻿@{
+﻿@model Data.Model.User
+
+@{
     Layout = null;
     var loggedInUser = (Data.Model.User)TempData["Apr"];
     TempData["Apr"] = loggedInUser;
     string name;
     if (loggedInUser.Name != null)
     {
-        name = loggedInUser.Name; 
-    } 
-    else 
+        name = loggedInUser.Name;
+    }
+    else
     {
-        name = "Име"; 
+        name = "Име";
+    }
+    string pictureString;
+    if (loggedInUser.Gender == "Мъж")
+    {
+        pictureString = "/Content/Images/male.jpg";
+    }
+    else
+    {
+        pictureString = "/Content/Images/female.jpg";
     }
 }
 
@@ -50,30 +61,16 @@
             <h1>Профил </h1>
 
             <div class="card">
-                <img id="myImage" src="~/Content/Images/profile1.jpg" alt="Avatar" style="width:100%">
+                <img id="myImage" src=@pictureString alt="Avatar" style="width:100%">
                 <div class="container1">
-                    <h4><b>Име</b></h4>
+                    <h4><b>@loggedInUser.Name</b></h4>
                 </div>
             </div>
-
-            <label for="email"><b>@name</b></label>
-            <input type="text" placeholder="Въведи име" name="name" required>
-
-
-            <form action="">
-                <input type="radio" name="gender" value="male"
-                       onclick="document.getElementById('myImage').src='~/Content/Images/male.jpg'"> Мъж<br>
-
-                <input type="radio" name="gender" value="female"
-                       onclick="document.getElementById('myImage').src='~/Content/Images/female.jpg'"> Жена<br>
-                
-            </form>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Запази" class="btn btn-default" />
-                </div>
+            <div>
+                <h2>Пол: @loggedInUser.Gender</h2>
             </div>
+
+            
         </div>
 
     </form>

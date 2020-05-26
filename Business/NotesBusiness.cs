@@ -12,26 +12,14 @@ namespace Business
     public class NotesBusiness
     {
         private NotesContext context;
+
+        //Makes a List with the notes from the Database
         public List<Notes> GetAll()
         {
             using (context = new NotesContext())
             {
                 return context.Notes.ToList();
             }
-        }
-
-        [JSInvokable]
-        public static void SaveNote(string note)
-        {
-            Notes newNote = new Notes();
-            newNote.Note = note;
-            newNote.UserId = 1;
-            using (NotesContext context = new NotesContext())
-            {
-                context.Notes.Add(newNote);
-                context.SaveChanges();
-            }
-
         }
 
     }
