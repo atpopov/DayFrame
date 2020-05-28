@@ -143,11 +143,9 @@ body {
 
 /* Style the tab content */
 .tabcontent {
-    color: white;
     display: none;
     padding: 0px 12px;
     width: 100%;
-    text-align: center;
     font-size: 30px;
 }
 

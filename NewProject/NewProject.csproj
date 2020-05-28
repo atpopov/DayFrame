@@ -212,6 +212,7 @@
     <Content Include="Content\Images\categoryy1.jpg" />
     <Content Include="Content\Images\Chernobyl.jpg" />
     <Content Include="Content\Images\Coco.jpg" />
+    <Content Include="favicon.ico" />
     <Content Include="Content\Images\female.jpg" />
     <Content Include="Content\Images\Good girls.jpg" />
     <Content Include="Content\Images\Infinity War.jpg" />
@@ -239,7 +240,6 @@
     <Content Include="Content\Images\Озарк.jpg" />
     <Content Include="Content\Images\Разказът на прислужницата.jpg" />
     <Content Include="Content\Indexstyle.css" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
