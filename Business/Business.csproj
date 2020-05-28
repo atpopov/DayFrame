@@ -82,6 +82,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CookBusiness.cs" />
+    <Compile Include="KinoBusiness.cs" />
+    <Compile Include="MusicBusiness.cs" />
     <Compile Include="NotesBusiness.cs" />
     <Compile Include="UserBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

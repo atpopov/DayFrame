@@ -1,5 +1,8 @@
 ﻿@{
-	ViewBag.Title = "Cooking";
+    ViewBag.Title = "Cook";
+	Business.CookBusiness cookBusiness = new Business.CookBusiness();
+	List<Data.Model.Cook> cookComments = cookBusiness.GetAll();
+
 }
 
 <head>
@@ -117,12 +120,20 @@
 		</h2>
 		<h2> Корейският кимбап Пролетни цветя е готов. </h2>
 		<button id="button" onclick="like()" style="font-size:24px">
-			<i class="fa fa-thumbs-o-up"></i> Харесвания
+			<i class="fa fa-thumbs-o-up"></i> Харесване
 		</button>
 		<h2 type="text" id="show"> </h2>
-		<form>
-			<textarea>Добавете текст...</textarea>
-		</form>
+		<h1>Коментари</h1>
+		<h2>За да напишете коментар, моля влезте в профила си или се регистрирайте.</h2>
+		@foreach (var comment in cookComments)
+		{
+			<ul>
+				@if (comment.ArticleId == 1)
+				{
+					<li>@comment.Comment</li>
+				}
+			</ul>
+		}
 
 	</div>
 
@@ -190,12 +201,20 @@
 		</h2>
 		<h4> Да ви е сладко! Прасковките с мас са много вкусни! </h4>
 		<button id="button" onclick="like()" style="font-size:24px">
-			<i class="fa fa-thumbs-o-up"></i> Харесвания
+			<i class="fa fa-thumbs-o-up"></i> Харесване
 		</button>
 		<h2 type="text" id="show"> </h2>
-		<form>
-			<textarea>Добавете текст...</textarea>
-		</form>
+		<h1>Коментари</h1>
+		<h2>За да напишете коментар, моля влезте в профила си или се регистрирайте.</h2>
+		@foreach (var comment in cookComments)
+		{
+			<ul>
+				@if (comment.ArticleId == 2)
+				{
+					<li>@comment.Comment</li>
+				}
+			</ul>
+		}
 	</div>
 
 
@@ -243,12 +262,20 @@
 			и намазваме със сладко от горски плодове.
 		</h2>
 		<button id="button" onclick="like()" style="font-size:24px">
-			<i class="fa fa-thumbs-o-up"></i> Харесвания
+			<i class="fa fa-thumbs-o-up"></i> Харесване
 		</button>
 		<h2 type="text" id="show"> </h2>
-		<form>
-			<textarea>Добавете текст...</textarea>
-		</form>
+		<h1>Коментари</h1>
+		<h2>За да напишете коментар, моля влезте в профила си или се регистрирайте.</h2>
+		@foreach (var comment in cookComments)
+		{
+			<ul>
+				@if (comment.ArticleId == 3)
+				{
+					<li>@comment.Comment</li>
+				}
+			</ul>
+		}
 	</div>
 
 	<div id="Питки" class="tabcontent">
@@ -299,12 +326,20 @@
 			ги намазваме с масло и сервираме топли.
 		</h4>
 		<button id="button" onclick="like()" style="font-size:24px">
-			<i class="fa fa-thumbs-o-up"></i> Харесвания
+			<i class="fa fa-thumbs-o-up"></i> Харесване
 		</button>
 		<h2 type="text" id="show"> </h2>
-		<form>
-			<textarea>Добавете текст...</textarea>
-		</form>
+		<h1>Коментари</h1>
+		<h2>За да напишете коментар, моля влезте в профила си или се регистрирайте.</h2>
+		@foreach (var comment in cookComments)
+		{
+			<ul>
+				@if (comment.ArticleId == 4)
+				{
+					<li>@comment.Comment</li>
+				}
+			</ul>
+		}
 	</div>
 
 	<div id="Понички" class="tabcontent">
@@ -358,12 +393,20 @@
 		</h2>
 		<h4> Да ви е сладко! </h4>
 		<button id="button" onclick="like()" style="font-size:24px">
-			<i class="fa fa-thumbs-o-up"></i> Харесвания
+			<i class="fa fa-thumbs-o-up"></i> Харесване
 		</button>
 		<h2 type="text" id="show"> </h2>
-		<form>
-			<textarea>Добавете текст...</textarea>
-		</form>
+		<h1>Коментари</h1>
+		<h2>За да напишете коментар, моля влезте в профила си или се регистрирайте.</h2>
+		@foreach (var comment in cookComments)
+		{
+			<ul>
+				@if (comment.ArticleId == 5)
+				{
+					<li>@comment.Comment</li>
+				}
+			</ul>
+		}
 	</div>
 
 	<script src="~/Content/html/cooking_script.js"></script>

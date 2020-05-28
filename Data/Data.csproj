@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\CookContext.cs" />
+    <Compile Include="Data\KinoContext.cs" />
+    <Compile Include="Data\MusicContext.cs" />
     <Compile Include="Data\NotesContext.cs" />
     <Compile Include="Data\UserContext.cs" />
     <Compile Include="Migrations\202005011218383_InitialCreate.cs" />
@@ -73,7 +76,42 @@
     <Compile Include="Migrations\202005201441144_AddNotesUsers2.designer.cs">
       <DependentUpon>202005201441144_AddNotesUsers2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005272016054_CookingKinoMusic.cs" />
+    <Compile Include="Migrations\202005272016054_CookingKinoMusic.designer.cs">
+      <DependentUpon>202005272016054_CookingKinoMusic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005272040189_AddArticleId.cs" />
+    <Compile Include="Migrations\202005272040189_AddArticleId.designer.cs">
+      <DependentUpon>202005272040189_AddArticleId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005281244498_RemoveCooking.cs" />
+    <Compile Include="Migrations\202005281244498_RemoveCooking.designer.cs">
+      <DependentUpon>202005281244498_RemoveCooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005281254347_CreateCooking2.cs" />
+    <Compile Include="Migrations\202005281254347_CreateCooking2.designer.cs">
+      <DependentUpon>202005281254347_CreateCooking2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005281414193_CreateCookings.cs" />
+    <Compile Include="Migrations\202005281414193_CreateCookings.designer.cs">
+      <DependentUpon>202005281414193_CreateCookings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005281931066_DropCooking.cs" />
+    <Compile Include="Migrations\202005281931066_DropCooking.designer.cs">
+      <DependentUpon>202005281931066_DropCooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005281950409_CreateCooking.cs" />
+    <Compile Include="Migrations\202005281950409_CreateCooking.designer.cs">
+      <DependentUpon>202005281950409_CreateCooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005282003515_CreateCook.cs" />
+    <Compile Include="Migrations\202005282003515_CreateCook.designer.cs">
+      <DependentUpon>202005282003515_CreateCook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Cook.cs" />
+    <Compile Include="Model\Kino.cs" />
+    <Compile Include="Model\Music.cs" />
     <Compile Include="Model\Notes.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +135,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005201441144_AddNotesUsers2.resx">
       <DependentUpon>202005201441144_AddNotesUsers2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005272016054_CookingKinoMusic.resx">
+      <DependentUpon>202005272016054_CookingKinoMusic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005272040189_AddArticleId.resx">
+      <DependentUpon>202005272040189_AddArticleId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005281244498_RemoveCooking.resx">
+      <DependentUpon>202005281244498_RemoveCooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005281254347_CreateCooking2.resx">
+      <DependentUpon>202005281254347_CreateCooking2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005281414193_CreateCookings.resx">
+      <DependentUpon>202005281414193_CreateCookings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005281931066_DropCooking.resx">
+      <DependentUpon>202005281931066_DropCooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005281950409_CreateCooking.resx">
+      <DependentUpon>202005281950409_CreateCooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005282003515_CreateCook.resx">
+      <DependentUpon>202005282003515_CreateCook.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

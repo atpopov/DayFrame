@@ -1,7 +1,11 @@
-﻿@{
-   ViewBag.Title = "Music";
-   var loggedInUser = (Data.Model.User)TempData["Apr"];
-	TempData["Apr"] = loggedInUser;
+﻿@model Data.Model.Music
+
+@{
+    ViewBag.Title = "Music";
+    var loggedInUser = (Data.Model.User)TempData["Apr"];
+    TempData["Apr"] = loggedInUser;
+    Business.MusicBusiness musicBusiness = new Business.MusicBusiness();
+	List<Data.Model.Music> musicComments = musicBusiness.GetAll();
 }
 
 <head>
@@ -63,9 +67,38 @@
         <h2> Година на издаване: 2019 г. </h2>
         <h2> Жанрове: Country rap, Поп музика</h2>
         <h2> Награди: „Грами“ за най-добро изпълнение на поп дует/група </h2>
-        <form>
-            <textarea>Добавете текст...</textarea>
-        </form>
+        <h1>Коментари</h1>
+        @using (Html.BeginForm("Music", "Apr", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            Model.ArticleId = 1;
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ArticleId, 1)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Запази" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        @foreach (var comment in musicComments)
+        {
+            <ul>
+                @if (comment.ArticleId == 1)
+                {
+                    <li>@comment.Comment</li>
+                }
+            </ul>
+        }
     </div>
 
 
@@ -79,9 +112,38 @@
         <h2>Жанр: Алтърнатив/инди </h2>
         <h2> Награди: „Грами“ за песен на годината </h2>
         <h2> Номинации: „Грами“ за най-добро солово поп изпълнение</h2>
-        <form>
-            <textarea>Добавете текст...</textarea>
-        </form>
+        <h1>Коментари</h1>
+        @using (Html.BeginForm("Music", "Apr", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            Model.ArticleId = 2;
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ArticleId, 2);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Запази" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+        @foreach (var comment in musicComments)
+        {
+            <ul>
+                @if (comment.ArticleId == 2)
+                {
+                    <li>@comment.Comment</li>
+                }
+            </ul>
+        }
     </div>
 
     <div id="Sucker" class="tabcontent">
@@ -93,9 +155,37 @@
         <h2>Жанр: Поп музика </h2>
         <h2> Награди: Награда за музикален клип на Ем Ти Ви за най-добър поп клип </h2>
         <h2> Номинации: Награда за музикален клип на Ем Ти Ви за клип на годината </h2>
-        <form>
-            <textarea>Добавете текст...</textarea>
-        </form>
+        <h1>Коментари</h1>
+        @using (Html.BeginForm("Music", "Apr", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            Model.ArticleId = 3;
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ArticleId, 3);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Запази" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+        @foreach (var comment in musicComments)
+        {
+            <ul>
+                @if (comment.ArticleId == 3)
+                {
+                    <li>@comment.Comment</li>
+                }
+            </ul>
+        }
     </div>
 
     <div id="Rings" class="tabcontent">
@@ -107,9 +197,37 @@
         <h2> Жанр: Поп музика </h2>
         <h2> Награди: Награда за музикален клип на Ем Ти Ви за най-добра художествена режисура </h2>
         <h2> Номинации: „Грами“ за най-добро солово поп изпълнение </h2>
-        <form>
-            <textarea>Добавете текст...</textarea>
-        </form>
+        <h1>Коментари</h1>
+        @using (Html.BeginForm("Music", "Apr", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            Model.ArticleId = 4;
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ArticleId, 4);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Запази" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+        @foreach (var comment in musicComments)
+        {
+            <ul>
+                @if (comment.ArticleId == 4)
+                {
+                    <li>@comment.Comment</li>
+                }
+            </ul>
+        }
     </div>
 
     <div id="Señorita" class="tabcontent">
@@ -121,9 +239,37 @@
         <h2> Жанр: Поп музика </h2>
         <h2> Награди: Награда за музикален клип на Ем Ти Ви за най-добро сътрудничество </h2>
         <h2> Номинации: Музикална награда на Ем Ти Ви Европа за най-добра песен </h2>
-        <form>
-            <textarea>Добавете текст...</textarea>
-        </form>
+        <h1>Коментари</h1>
+        @using (Html.BeginForm("Music", "Apr", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            Model.ArticleId = 5;
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ArticleId, 5);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Запази" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+        @foreach (var comment in musicComments)
+        {
+            <ul>
+                @if (comment.ArticleId == 5)
+                {
+                    <li>@comment.Comment</li>
+                }
+            </ul>
+        }
     </div>
 
     <script type="text/javascript">
@@ -156,9 +302,37 @@
         <h2> Жанрове: Поп музика, Трап, Поп-рап </h2>
         <h2> Награди: „Грами“ за най-добра рап песен </h2>
         <h2> Номинации: „Грами“ за песен на годината </h2>
-        <form>
-            <textarea>Добавете текст...</textarea>
-        </form>
+        <h1>Коментари</h1>
+        @using (Html.BeginForm("Music", "Apr", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            Model.ArticleId = 6;
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ArticleId, 6);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Запази" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+        @foreach (var comment in musicComments)
+        {
+            <ul>
+                @if (comment.ArticleId == 6)
+                {
+                    <li>@comment.Comment</li>
+                }
+            </ul>
+        }
     </div>
 
     <div id="ilikeit" class="tabcontent1">
@@ -169,9 +343,37 @@
         <h2> Жанр: Поп музика </h2>
         <h2> Награди: Награда за музикален клип на Ем Ти Ви за най-добър поп клип </h2>
         <h2> Номинации: Награда за музикален клип на Ем Ти Ви за клип на годината </h2>
-        <form>
-            <textarea>Добавете текст...</textarea>
-        </form>
+        <h1>Коментари</h1>
+        @using (Html.BeginForm("Music", "Apr", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            Model.ArticleId = 7;
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ArticleId, 7);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Запази" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+        @foreach (var comment in musicComments)
+        {
+            <ul>
+                @if (comment.ArticleId == 7)
+                {
+                    <li>@comment.Comment</li>
+                }
+            </ul>
+        }
     </div>
 
     <div id="notears" class="tabcontent1">
@@ -183,9 +385,37 @@
         <h2>Жанр: Поп музика </h2>
         <h2> Награди: Награда за музикален клип на Ем Ти Ви за най-добър поп клип </h2>
         <h2> Номинации: Награда за музикален клип на Ем Ти Ви за клип на годината </h2>
-        <form>
-            <textarea>Добавете текст...</textarea>
-        </form>
+        <h1>Коментари</h1>
+        @using (Html.BeginForm("Music", "Apr", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            Model.ArticleId = 8;
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ArticleId, 8);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Запази" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+        @foreach (var comment in musicComments)
+        {
+            <ul>
+                @if (comment.ArticleId == 8)
+                {
+                    <li>@comment.Comment</li>
+                }
+            </ul>
+        }
     </div>
 
     <div id="havana" class="tabcontent1">
@@ -196,9 +426,37 @@
         <h2> Албум: Camila </h2>
         <h2> Година на издаване: 2018 г. </h2>
         <h2> Жанрове: Латино-поп, Поп музика </h2>
-        <form>
-            <textarea>Добавете текст...</textarea>
-        </form>
+        <h1>Коментари</h1>
+        @using (Html.BeginForm("Music", "Apr", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            Model.ArticleId = 9;
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ArticleId, 9);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Запази" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+        @foreach (var comment in musicComments)
+        {
+            <ul>
+                @if (comment.ArticleId == 9)
+                {
+                    <li>@comment.Comment</li>
+                }
+            </ul>
+        }
     </div>
 
     <div id="friends" class="tabcontent1">
@@ -209,9 +467,37 @@
         <h2> Година на издаване: 2018 г. </h2>
         <h2> Жанр: Поп музика </h2>
         <h2> Номинации: MuchMusic Video Award for Song of the Summer </h2>
-        <form>
-            <textarea>Добавете текст...</textarea>
-        </form>
+        <h1>Коментари</h1>
+        @using (Html.BeginForm("Music", "Apr", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            Model.ArticleId = 10;
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ArticleId, 10);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Запази" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+        @foreach (var comment in musicComments)
+        {
+            <ul>
+                @if (comment.ArticleId == 10)
+                {
+                    <li>@comment.Comment</li>
+                }
+            </ul>
+        }
     </div>
 
     <h6>Топ5 най-слушаните песни за</h6>
@@ -237,9 +523,37 @@
             Тамека Котл; Kevin "She'kspere" Briggs
         </h2>
         <h2> Продуцент: : Ed Sheeran; Стив Мак </h2>
-        <form>
-            <textarea>Добавете текст...</textarea>
-        </form>
+        <h1>Коментари</h1>
+        @using (Html.BeginForm("Music", "Apr", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            Model.ArticleId = 11;
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ArticleId, 11);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Запази" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+        @foreach (var comment in musicComments)
+        {
+            <ul>
+                @if (comment.ArticleId == 11)
+                {
+                    <li>@comment.Comment</li>
+                }
+            </ul>
+        }
     </div>
 
     <div id="newrules" class="tabcontent2">
@@ -250,9 +564,37 @@
         <h2> Година на издаване: 2017 г. </h2>
         <h2> Жанр: Поп музика </h2>
         <h2> Номинации: Награда „Брит“ за най-добър британски сингъл </h2>
-        <form>
-            <textarea>Добавете текст...</textarea>
-        </form>
+        <h1>Коментари</h1>
+        @using (Html.BeginForm("Music", "Apr", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            Model.ArticleId = 12;
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ArticleId, 12);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Запази" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+        @foreach (var comment in musicComments)
+        {
+            <ul>
+                @if (comment.ArticleId == 12)
+                {
+                    <li>@comment.Comment</li>
+                }
+            </ul>
+        }
     </div>
 
     <div id="Despacito" class="tabcontent2">
@@ -263,9 +605,37 @@
         <h2> Албум: Vida </h2>
         <h2> Година на издаване: 2017 г. </h2>
         <h2> Жанрове: Регетон, Латино-поп </h2>
-        <form>
-            <textarea>Добавете текст...</textarea>
-        </form>
+        <h1>Коментари</h1>
+        @using (Html.BeginForm("Music", "Apr", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            Model.ArticleId = 13;
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ArticleId, 13);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Запази" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+        @foreach (var comment in musicComments)
+        {
+            <ul>
+                @if (comment.ArticleId == 13)
+                {
+                    <li>@comment.Comment</li>
+                }
+            </ul>
+        }
     </div>
 
     <div id="signoftimes" class="tabcontent2">
@@ -276,9 +646,37 @@
         <h2> Година на издаване: 2017 г. </h2>
         <h2> Жанр: Бритпоп </h2>
         <h2> Номинации: Награда за музикален клип на Ем Ти Ви за най-добър поп клип </h2>
-        <form>
-            <textarea>Добавете текст...</textarea>
-        </form>
+        <h1>Коментари</h1>
+        @using (Html.BeginForm("Music", "Apr", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            Model.ArticleId = 14;
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ArticleId, 14);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Запази" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+        @foreach (var comment in musicComments)
+        {
+            <ul>
+                @if (comment.ArticleId == 14)
+                {
+                    <li>@comment.Comment</li>
+                }
+            </ul>
+        }
     </div>
 
     <div id="Humble" class="tabcontent2">
@@ -289,9 +687,37 @@
         <h2> Година на издаване: 2017 г. </h2>
         <h2> Награди: „Грами“ за най-добра рап песен </h2>
         <h2> Номинации: „Грами“ за запис на годината </h2>
-        <form>
-            <textarea>Добавете текст...</textarea>
-        </form>
+        <h1>Коментари</h1>
+        @using (Html.BeginForm("Music", "Apr", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            Model.ArticleId = 15;
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ArticleId, 15);
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Запази" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+        @foreach (var comment in musicComments)
+        {
+            <ul>
+                @if (comment.ArticleId == 15)
+                {
+                    <li>@comment.Comment</li>
+                }
+            </ul>
+        }
     </div>
 
     <script src="~/Content/html/music_script.js"></script>

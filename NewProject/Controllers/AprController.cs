@@ -21,24 +21,67 @@ namespace NewProject.Controllers
             return View();
         }
 
-        //Method that displays the Cooking Page for a logged in User
-        public ActionResult Cooking()
+        //The GET Method that displays the Cooking Page for a logged in User
+        [HttpGet]
+        public ActionResult Cooking(int id = 0)
         {
-            
-            return View();
+            Cook cookModel = new Cook();
+
+            return View(cookModel);
         }
 
-        //Method that displays the Movie Page for a logged in User
-        public ActionResult Kino()
+        //The POST Method that creates the new Cook Model and stores them into the Database
+        [HttpPost]
+        public ActionResult Cooking(Cook cookModel)
         {
-            return View();
+            using (CookContext context = new CookContext())
+            {
+                context.CookComments.Add(cookModel);
+                context.SaveChanges();
+            }
+            return View("Cooking", new Cook());
+        }
+
+        //The GET Method that displays the Movie Page for a logged in User
+        [HttpGet]
+        public ActionResult Kino(int id = 0)
+        {
+            Kino kinoModel = new Kino();
+            return View(kinoModel);
+        }
+
+        //The POST Method that posts a new comment
+        [HttpPost]
+        public ActionResult Kino (Kino kinoModel)
+        {
+            using(KinoContext context = new KinoContext())
+            {
+                context.KinoComments.Add(kinoModel);
+                context.SaveChanges();
+            }
+            return View("Kino", new Kino());
         }
 
 
-        //Method that displays the Music Page for a logged in User
-        public ActionResult Music()
+        //The GET Method that displays the Music Page for a logged in User
+        [HttpGet]
+        public ActionResult Music(int id = 0)
         {
-            return View();
+            Music musicModel = new Music();
+
+            return View(musicModel);
+        }
+
+        //The POST Method that creates the new Music Model and stores them into the Database
+        [HttpPost]
+        public ActionResult Music(Music musicModel)
+        {
+            using (MusicContext context = new MusicContext())
+            {
+                context.MusicComments.Add(musicModel);
+                context.SaveChanges();
+            }
+            return View("Music", new Music());
         }
 
         //The GET Method that displays the Personal User Profile

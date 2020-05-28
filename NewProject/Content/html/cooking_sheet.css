@@ -1,4 +1,5 @@
-﻿#navbar {
+﻿/*style the navbar*/
+#navbar {
     overflow: hidden;
     background-color: #4dffb8;
     box-shadow: 0px 5px 5px #00b3b3;
@@ -24,7 +25,7 @@
             width: "50px";
             height: "35px";
         }
-
+/*style the links of class image*/
 a.image {
     font-size: 40px;
     padding: 1px 1px;
@@ -106,13 +107,14 @@ a.image {
 }
 
 /*end of mega menu*/
-
+/*Style the sticky*/
 .sticky {
     position: fixed;
     top: 0;
     width: 100%;
 }
 
+/*Style the body*/
 body {
     margin: 3;
     font-size: 40px;
@@ -120,7 +122,7 @@ body {
     background-color: #ccffeb;
 }
 /* Секцията с рецепти */
-
+/*Style the headings*/
 h1 {
     text-align: center;
     font-size: 45px;
@@ -142,7 +144,7 @@ h5 {
     font-size: 25px;
     text-align: center;
 }
-
+/*Style the image*/
 img.recipe {
     position: static;
     display: block;
@@ -150,13 +152,13 @@ img.recipe {
     margin-right: auto;
     width: 50%;
 }
-
+/*Style the heading*/
 h2 {
     position: static;
     text-align: left;
     font-size: 20px;
 }
-
+/*Style the paragraph*/
 p {
     text-align: center;
     font-size: 40px;
@@ -166,7 +168,7 @@ p {
 * {
     box-sizing: border-box
 }
-
+/*Style the body*/
 body {
     font-family: "Lato", sans-serif;
 }
@@ -234,7 +236,7 @@ body {
     #myBtn:hover {
         background-color: #555;
     }
-
+/*style the text area*/
 textarea {
     width: 100%;
     height: 150px;
@@ -245,4 +247,20 @@ textarea {
     background-color: #f8f8f8;
     font-size: 16px;
     resize: none;
+}
+
+formtxt {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 3px solid #00b3b3;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+btn1 {
+    width : 100%;
 }

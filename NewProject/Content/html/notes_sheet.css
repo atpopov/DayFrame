@@ -1,4 +1,5 @@
-﻿#navbar {
+﻿/*style the navbar*/
+#navbar {
     overflow: hidden;
     background-color: #4dffb8;
     box-shadow: 0px 5px 5px #00b3b3;
@@ -24,7 +25,7 @@
             width: "50px";
             height: "35px";
         }
-
+/*Style the links of class image*/
 a.image {
     font-size: 40px;
     padding: 1px 1px;
@@ -106,13 +107,13 @@ a.image {
 }
 
 /*end of mega menu*/
-
+/*Style the sticky*/
 .sticky {
     position: fixed;
     top: 0;
     width: 100%;
 }
-
+/*Style the body*/
 body {
     margin: 3;
     font-size: 40px;
@@ -256,7 +257,7 @@ input {
 div.form-vertical {
     text-align: center;
 }
-
+/*Style the paragraphs*/
 p {
     margin-top: 8%;
 }

@@ -1,5 +1,7 @@
 ﻿@{
-    ViewBag.Title = "Music";
+    ViewBag.Title = "Kino";
+    Business.KinoBusiness kinoBusiness = new Business.KinoBusiness();
+	List<Data.Model.Kino> kinoComments = kinoBusiness.GetAll();
 }
 
 <head>
@@ -71,12 +73,16 @@
                     likes = 1;
                 }
             </script>
-
-
-            <form>
-                <textarea>Добавете текст...</textarea>
-            </form>
-
+            <h2>За да напишете коментар, моля влезте в профила си или се регистрирайте.</h2>
+            @foreach (var comment in kinoComments)
+            {
+                <ul>
+                    @if (comment.ArticleId == 1)
+                    {
+                        <li>@comment.Comment</li>
+                    }
+                </ul>
+            }
 
         </div>
 
@@ -110,12 +116,19 @@
                 function like() {
                     document.getElementById("show").innerHTML = "Likes:" + likes;
                     likes = 1;
+
                 }
             </script>
-            <form>
-                <textarea>Добавете текст...</textarea>
-            </form>
-
+            <h2>За да напишете коментар, моля влезте в профила си или се регистрирайте.</h2>
+            @foreach (var comment in kinoComments)
+            {
+                <ul>
+                    @if (comment.ArticleId == 2)
+                    {
+                        <li>@comment.Comment</li>
+                    }
+                </ul>
+            }
         </div>
 
         <div id="Филми2017" class="content">
@@ -150,10 +163,16 @@
                     likes = 1;
                 }
             </script>
-            <form>
-                <textarea>Добавете текст...</textarea>
-            </form>
-
+            <h2>За да напишете коментар, моля влезте в профила си или се регистрирайте.</h2>
+            @foreach (var comment in kinoComments)
+            {
+                <ul>
+                    @if (comment.ArticleId == 3)
+                    {
+                        <li>@comment.Comment</li>
+                    }
+                </ul>
+            }
         </div>
 
     </div>
@@ -198,11 +217,16 @@
                     likes = 1;
                 }
             </script>
-
-            <form>
-                <textarea>Добавете текст...</textarea>
-            </form>
-
+            <h2>За да напишете коментар, моля влезте в профила си или се регистрирайте.</h2>
+            @foreach (var comment in kinoComments)
+            {
+                <ul>
+                    @if (comment.ArticleId == 4)
+                    {
+                        <li>@comment.Comment</li>
+                    }
+                </ul>
+            }
         </div>
 
         <div id="2018" class="content1">
@@ -237,11 +261,16 @@
                     likes = 1;
                 }
             </script>
-
-            <form>
-                <textarea>Добавете текст...</textarea>
-            </form>
-
+            <h2>За да напишете коментар, моля влезте в профила си или се регистрирайте.</h2>
+            @foreach (var comment in kinoComments)
+            {
+                <ul>
+                    @if (comment.ArticleId == 5)
+                    {
+                        <li>@comment.Comment</li>
+                    }
+                </ul>
+            }
         </div>
 
         <div id="2017" class="content1">
@@ -276,11 +305,16 @@
                     likes = 1;
                 }
             </script>
-
-            <form>
-                <textarea>Добавете текст...</textarea>
-            </form>
-
+            <h2>За да напишете коментар, моля влезте в профила си или се регистрирайте.</h2>
+            @foreach (var comment in kinoComments)
+            {
+                <ul>
+                    @if (comment.ArticleId == 6)
+                    {
+                        <li>@comment.Comment</li>
+                    }
+                </ul>
+            }
         </div>
 
     </div>

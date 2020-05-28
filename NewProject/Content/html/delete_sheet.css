@@ -1,4 +1,4 @@
-﻿/* BAR */
+﻿/*style the BAR */
 #navbar {
     overflow: hidden;
     background-color: #4dffb8;
@@ -25,7 +25,7 @@
             width: "50px";
             height: "35px";
         }
-
+/*style the links of class image*/
 a.image {
     font-size: 40px;
     padding: 1px 1px;
@@ -107,13 +107,13 @@ a.image {
 }
 
 /*end of mega menu*/
-
+/*Style the sticky*/
 .sticky {
     position: fixed;
     top: 0;
     width: 100%;
 }
-
+/*Style the body*/
 body {
     margin: 3;
     font-size: 40px;
@@ -122,11 +122,11 @@ body {
 }
     
     /*alignment of text and buttons on page*/
-   
+/*Style the deletednotes*/   
 deletednote {
     text-align:center;
 }
-
+/*Style the delete buttons*/
 deletebtn {
     margin: auto;
     width: 50%;

@@ -25,7 +25,7 @@
             width: "50px";
             height: "35px";
         }
-
+/*style the links of image*/
 a.image {
     font-size: 40px;
     padding: 1px 1px;
@@ -107,13 +107,13 @@ a.image {
 }
 
 /*end of mega menu*/
-
+/*Style the sticky*/
 .sticky {
     position: fixed;
     top: 0;
     width: 100%;
 }
-
+/*style the body*/
 body {
     margin: 3;
     font-size: 40px;
@@ -129,7 +129,7 @@ img.category1 {
     margin-top: 20px;
     box-shadow: 5px 5px 5px #00b3b3;
 }
-
+/*style the box*/
 .box {
     background-color: #00b3b3;
     width: 28%;
