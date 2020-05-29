@@ -15,7 +15,7 @@
             {
                 UserNotes.Add(note);
             }
-            // TempData["UserNotes"] = UserNotes;
+          
         }
     }
 }
@@ -78,7 +78,7 @@
         {
 
             <li>@note.Note</li>
-            <li> @Html.ActionLink("Delete", "DeleteNote", new { id = note.Id })</li>
+            <li>@Html.ActionLink("Изтрий", "DeleteNote", new { id = note.Id })</li>
             
         }
 

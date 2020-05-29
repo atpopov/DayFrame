@@ -1,6 +1,7 @@
 ﻿using Data.Data;
 using Data.Model;
 using Microsoft.JSInterop;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,18 @@ namespace Business
             {
                 return context.Notes.ToList();
             }
+        }
+
+        [Test]
+        public void Test()
+        {
+            List<Notes> testList = GetAll();
+            List<Notes> expectedList = new List<Notes>();
+            foreach (var note in context.Notes)
+            {
+                expectedList.Add(note);
+            }
+            Assert.AreEqual(expectedList, testList, "The lists should be equal.");
         }
 
     }

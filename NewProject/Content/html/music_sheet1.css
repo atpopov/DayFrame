@@ -280,6 +280,11 @@ body {
     border-left: none;
     height: auto;
 }
+    .tabcontent ul li {
+        margin-left: 0px;
+        font-size: 20px;
+        color: black;
+    }
 
 .tabcontent1 {
     float: left;
@@ -290,6 +295,12 @@ body {
     height: auto;
 }
 
+    .tabcontent1 ul li {
+        margin-left: 0px;
+        font-size: 20px;
+        color: black;
+    }
+
 .tabcontent2 {
     float: left;
     padding: 0px 12px;
@@ -298,6 +309,12 @@ body {
     border-left: none;
     height: auto;
 }
+
+    .tabcontent2 ul li {
+        margin-left: 0px;
+        font-size: 20px;
+        color: black;
+    }
 /* Add text conteiner */
 textarea {
     width: 100%;
